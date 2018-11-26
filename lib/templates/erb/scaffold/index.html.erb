@@ -7,7 +7,7 @@
 	<%% @<%= plural_table_name %>.each do |<%= singular_table_name %>| %>
 	<div>
 		<% attributes.reject(&:password_digest?).each do |attribute| -%>
-		<p><%= <%= singular_table_name %>.<%= attribute.column_name %> %></p>
+		<p><%%= <%= singular_table_name %>.<%= attribute.column_name %> %></p>
 		<% end -%>
 		<p><%%= link_to 'Show', <%= model_resource_name %> %></p>
 		<p><%%= link_to 'Edit', edit_<%= singular_route_name %>_path(<%= singular_table_name %>) %></p>
@@ -18,4 +18,4 @@
 
 <br>
 
-<%= link_to 'New <%= singular_table_name.titleize %>', new_<%= singular_route_name %>_path %>
+<%%= link_to 'New <%= singular_table_name.titleize %>', new_<%= singular_route_name %>_path %>
